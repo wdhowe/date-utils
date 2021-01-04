@@ -1,81 +1,51 @@
-# clj-project
+# date-utils
 
-A template for starting a clj tools based project.
+A Clojure library for getting date based information.
 
-## Overview
+## Getting Started
 
-Batteries included features:
+Using the date-utils library.
 
-- Project dirs/file basics
-  - src and test directory structure.
-  - .gitignore, CHANGELOG, config.edn, deps.edn, LICENSE, README.
-- Config: Configuration/Env variables via 'clj-config'.
-- Dependencies: Dependency version checks with 'deps-ancient'.
-- Deploy: Publish uberjars to clojars via 'deps-deploy'.
-- Tests: Clojure 'test-runner' from Cognitect.
-- Packaging: Create uberjars with 'cambada'.
+### Installation
 
-Some features above selected from the clj-tools list [available here](https://github.com/clojure/tools.deps.alpha/wiki/Tools).
-
-## Execute the -main function
-
-Run the -main function in the namespace/core.clj file:
-
-- Method 1: Implied -main function in the namespace:
+Leiningen/Boot Project File
 
 ```clojure
-clj -M -m clj-project.core
+[date-utils "0.1.0"]
 ```
 
-- Method 2: Explicit namespace+function:
+Clojure CLI/deps.edn
 
 ```clojure
-clj -X clj-project.core/-main
+date-utils/date-utils {:mvn/version "0.1.0"}
 ```
 
-## Config
+### Include the Library
 
-Config is loaded in the following order:
-
-- A :config map in the deps.edn file. (included in this project's deps.edn)
-- config.edn on the classpath. (included in this project's dir)
-- Environment variables.
-- Java system properties.
-
-[clj-config details here.](https://gitlab.com/orangefoxcollective/clj-config)
-
-## Dependencies
-
-Check for outdated dependencies:
+In the REPL
 
 ```clojure
-clj -M:ancient
+(require '[date-utils.core :as date])
 ```
 
-## Deploy
-
-Deploy your uberjars to clojars:
+In your application
 
 ```clojure
-;; env vars for clojars
-CLOJARS_USERNAME=username
-CLOJARS_PASSWORD=clojars-token
-
-clj -M:deploy
+(ns my-app.core
+  (:require [date-utils.core :as date]))
 ```
 
-## Tests
+### Use the Library
 
-In the project root directory, run the tests:
-
-```clojure
-clj -M:test
-```
-
-## Packaging
-
-Create an uberjar:
+A few usage examples.
 
 ```clojure
-clj -M:uberjar
+;; Get the current date in a date object.
+(date/now)
+
+;; Convert a yyyy-MM-dd string to a date object.
+(date/str->date "2020-01-03")
+
+;; Days left until the end of the year.
+(date/days-left)
 ```
