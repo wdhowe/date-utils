@@ -11,8 +11,9 @@ Using the date-utils library.
 Clojure CLI/deps.edn
 
 ```clojure
-date-utils/date-utils {:git/url "https://github.com/wdhowe/date-utils.git"
-                       :sha "6ca89eb29f956286e4e07328fe6082324279b665"}
+:deps
+ {io.github.wdhowe/date-utils
+  {:git/tag "0.1.0" :git/sha "SHORT-SHA"}}
 ```
 
 ### Include the Library
