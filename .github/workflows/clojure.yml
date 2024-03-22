@@ -14,17 +14,21 @@ jobs:
     strategy:
       matrix:
         # JDK LTS: 8, 11, 17
-        jdk_version: [8, 11, 15, 16]
+        jdk_version: [8, 11, 17]
         os: [ubuntu-latest]
 
     container:
-      image: clojure:openjdk-${{ matrix.jdk_version }}-tools-deps
+      image: clojure:openjdk-${{ matrix.jdk_version }}-lein
 
     steps:
       - uses: actions/checkout@v2
-      - name: Version
-        run: clj -h | grep Version
-      - name: Tests
-        run: clj -M:test
+      - name: Info
+        run: |
+          lein version
       - name: Package
-        run: clj -M:uberjar
+        run: |
+          lein deps
+          lein compile
+          lein uberjar
+      - name: Tests
+        run: lein test
