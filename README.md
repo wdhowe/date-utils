@@ -13,7 +13,7 @@ Clojure CLI/deps.edn
 ```clojure
 :deps
  {io.github.wdhowe/date-utils
-  {:git/tag "0.1.0" :git/sha "SHORT-SHA"}}
+  {:git/tag "0.1.0" :git/sha "732297d"}}
 ```
 
 ### Include the Library
