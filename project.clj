@@ -1,4 +1,4 @@
-(defproject date-utils "0.1.0"
+(defproject com.github.wdhowe/date-utils "0.2.0"
 
   ;;; Project Metadata
   :description "A Clojure library for getting date based information."
