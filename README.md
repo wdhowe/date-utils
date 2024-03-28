@@ -1,5 +1,7 @@
 # date-utils
 
+[![Build Status][gh-actions-badge]][gh-actions] [![Clojars Project][clojars-badge]][clojars] [![Clojure version][clojure-v]](project.clj)
+
 A Clojure library for getting date based information.
 
 ## Getting Started
@@ -8,13 +10,7 @@ Using the date-utils library.
 
 ### Installation
 
-Clojure CLI/deps.edn
-
-```clojure
-:deps
- {io.github.wdhowe/date-utils
-  {:git/tag "0.1.0" :git/sha "732297d"}}
-```
+See [Clojars for adding this library][clojars] to various project types (lein, boot, deps.edn, etc).
 
 ### Include the Library
 
@@ -45,3 +41,13 @@ A few usage examples.
 ;; Days left until the end of the year.
 (date/days-left)
 ```
+
+<!-- Named page links below: /-->
+
+[gh-actions-badge]: https://github.com/wdhowe/date-utils/workflows/ci%2Fcd/badge.svg
+[gh-actions]: https://github.com/wdhowe/date-utils/actions
+[cljdoc-badge]: https://cljdoc.org/badge/com.github.wdhowe/date-utils
+[cljdoc-link]: https://cljdoc.org/d/com.github.wdhowe/date-utils/CURRENT
+[clojure-v]: https://img.shields.io/badge/clojure-1.11.1-blue.svg
+[clojars]: https://clojars.org/com.github.wdhowe/date-utils
+[clojars-badge]: https://img.shields.io/clojars/v/com.github.wdhowe/date-utils.svg
